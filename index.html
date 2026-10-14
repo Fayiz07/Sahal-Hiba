@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Nikah of Muhammed Sahal & Hiba Mahamood | Wedding Invitation</title>
+
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description"
+    content="Join us in celebrating the Nikah ceremony of Muhammed Sahal & Hiba Mahamood on Saturday, 17th October 2026 at Green.Oak Convention Centre, Thurayur, Payyoli.">
+  <meta property="og:title" content="Nikah Invitation: Sahal & Hiba">
+  <meta property="og:description"
+    content="We cordially invite you to celebrate our Nikah ceremony on Saturday, 17th October 2026.">
+  <meta property="og:image" content="invitation_card.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700;800&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-cream: #faf7f2;
+      --bg-soft-blush: #f8ede8;
+      --card-bg: #fffefe;
+      --primary-gold: #c69d58;
+      --gold-light: #e8d3a7;
+      --gold-dark: #987130;
+      --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa771c 100%);
+      --text-burgundy: #531c26;
+      --text-maroon: #682430;
+      --text-dark: #2c2523;
+      --text-muted: #746864;
+      --envelope-color: #f7ede8;
+      --envelope-shadow: rgba(145, 110, 100, 0.22);
+      --font-serif: 'Playfair Display', serif;
+      --font-display: 'Cinzel', serif;
+      --font-script: 'Alex Brush', cursive;
+      --font-great-vibes: 'Great Vibes', cursive;
+      --font-arabic: 'Amiri', serif;
+      --font-sans: 'Montserrat', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      font-family: var(--font-sans);
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Ambient animated background */
+    .ambient-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle at 50% 20%, #fff8f3 0%, #fbf3ee 45%, #f4e8e1 100%);
+      overflow: hidden;
+    }
+
+    .ambient-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(230, 195, 160, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+      animation: floatGlow 14s ease-in-out infinite alternate;
+    }
+
+    .ambient-glow-1 {
+      top: -100px;
+      left: -100px;
+    }
+
+    .ambient-glow-2 {
+      bottom: -100px;
+      right: -100px;
+      animation-delay: -7s;
+    }
+
+    @keyframes floatGlow {
+      0% {
+        transform: scale(1) translate(0, 0);
+      }
+
+      100% {
+        transform: scale(1.25) translate(60px, 40px);
+      }
+    }
+
+    /* Floating petals / sparkles canvas */
+    #petals-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* =========================================================
+       INTRO ENVELOPE MODAL / OVERLAY
+       ========================================================= */
+    #intro-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(ellipse at center, #fdf8f5 0%, #f6eae3 50%, #ebd7cc 100%);
+      padding: 16px;
+      transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.2s;
+    }
+
+    #intro-screen.opened {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-header {
+      text-align: center;
+      margin-bottom: 24px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .intro-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      margin-bottom: 6px;
+    }
+
+    .intro-subtitle {
+      font-family: var(--font-great-vibes);
+      font-size: 38px;
+      color: var(--text-burgundy);
+      line-height: 1.2;
+    }
+
+    /* 3D Envelope Container */
+    .envelope-stage {
+      perspective: 1200px;
+      width: 100%;
+      max-width: 380px;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .envelope-box {
+      width: 340px;
+      height: 450px;
+      background: linear-gradient(145deg, #fbf4f0 0%, #f6ebe4 100%);
+      border-radius: 14px;
+      position: relative;
+      box-shadow: 0 30px 60px -10px rgba(90, 45, 30, 0.28),
+        0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease;
+      border: 1px solid #ebd9cf;
+      overflow: visible;
+    }
+
+    /* Envelope Top Flap */
+    .flap-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 54%;
+      background: linear-gradient(180deg, #f8ede6 0%, #f2dfd5 100%);
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transform-origin: top center;
+      transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.2s 0.6s;
+      z-index: 4;
+      box-shadow: 0 10px 20px rgba(110, 60, 45, 0.14);
+      filter: drop-shadow(0 4px 6px rgba(120, 70, 50, 0.12));
+    }
+
+    /* Detailed embossed floral filigree pattern */
+    .embossed-flourish {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      opacity: 0.55;
+    }
+
+    /* Envelope Left & Right flaps */
+    .flap-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, #f7ebe4 0%, #edd8ce 100%);
+      clip-path: polygon(0 0, 0 100%, 100% 50%);
+      z-index: 2;
+    }
+
+    .flap-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(270deg, #f7ebe4 0%, #edd8ce 100%);
+      clip-path: polygon(100% 0, 100% 100%, 0 50%);
+      z-index: 2;
+    }
+
+    /* Envelope Bottom Flap */
+    .flap-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60%;
+      background: linear-gradient(0deg, #f4e1d7 0%, #ebdad0 100%);
+      clip-path: polygon(0 100%, 100% 100%, 50% 16%);
+      z-index: 3;
+      box-shadow: 0 -4px 18px rgba(110, 60, 45, 0.09);
+    }
+
+    /* Inner Card Peek */
+    .inner-card-peek {
+      position: absolute;
+      top: 25px;
+      left: 20px;
+      right: 20px;
+      bottom: 25px;
+      background: #ffffff;
+      border-radius: 12px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      border: 1px solid #ebd9cf;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+      transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s;
+    }
+
+    .inner-card-peek .bismillah-small {
+      font-family: var(--font-arabic);
+      font-size: 20px;
+      color: var(--primary-gold);
+      margin-bottom: 6px;
+    }
+
+    .inner-card-peek .names-preview {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      color: var(--text-burgundy);
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    /* THE WAX SEAL */
+    .wax-seal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #eed8ce 0%, #dcbaa8 45%, #b98976 100%);
+      box-shadow: 0 12px 28px rgba(90, 45, 30, 0.38),
+        0 0 0 4px rgba(255, 255, 255, 0.45) inset,
+        0 -3px 8px rgba(60, 20, 10, 0.25) inset;
+      z-index: 10;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      user-select: none;
+      outline: none;
+      border: none;
+    }
+
+    /* Melted organic wax rim */
+    .wax-seal::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 46% 54% 52% 48% / 53% 47% 53% 47%;
+      background: radial-gradient(circle at 40% 40%, #e8c7b8 0%, #c49987 70%, #9a6856 100%);
+      z-index: -1;
+      filter: blur(0.6px);
+      box-shadow: 0 8px 20px rgba(80, 35, 25, 0.35);
+    }
+
+    .wax-seal-inner {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(135, 82, 70, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.4) 0%, rgba(90, 40, 30, 0.08) 100%);
+      box-shadow: 0 1px 4px rgba(255, 255, 255, 0.5) inset;
+    }
+
+    .seal-monogram {
+      font-family: var(--font-great-vibes);
+      font-size: 38px;
+      color: #63322a;
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.7), -1px -1px 2px rgba(60, 20, 10, 0.35);
+      line-height: 1;
+      margin-top: 2px;
+      font-weight: 500;
+      letter-spacing: -1px;
+    }
+
+    .seal-subtext {
+      font-family: var(--font-display);
+      font-size: 7.5px;
+      letter-spacing: 2.5px;
+      color: #7d4940;
+      text-transform: uppercase;
+      margin-top: 2px;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+
+    .wax-seal:hover {
+      transform: translate(-50%, -50%) scale(1.08);
+      box-shadow: 0 14px 28px rgba(90, 45, 30, 0.45);
+    }
+
+    .seal-ring-pulse {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 2px solid rgba(198, 157, 88, 0.6);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      animation: sealPulse 2.4s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+      z-index: 9;
+    }
+
+    @keyframes sealPulse {
+      0% {
+        transform: translate(-50%, -50%) scale(0.85);
+        opacity: 0.9;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    /* Click prompt text */
+    .seal-prompt {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      animation: fadeInUp 1s ease-out 0.3s backwards;
+    }
+
+    .seal-prompt-text {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-maroon);
+      background: rgba(255, 255, 255, 0.65);
+      padding: 6px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(198, 157, 88, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .seal-prompt-hint {
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+    }
+
+    /* ENVELOPE OPENING ANIMATION CLASSES */
+    .envelope-box.is-opening .wax-seal {
+      transform: translate(-50%, -50%) scale(1.3);
+      opacity: 0;
+      transition: all 0.5s ease-out;
+    }
+
+    .envelope-box.is-opening .seal-ring-pulse {
+      display: none;
+    }
+
+    .envelope-box.is-opening .flap-top {
+      transform: rotateX(180deg);
+      z-index: 0;
+    }
+
+    .envelope-box.is-opening .inner-card-peek {
+      transform: translateY(-80px) scale(1.05);
+      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    /* =========================================================
+       MAIN INVITATION CONTENT
+       ========================================================= */
+    #main-content {
+      position: relative;
+      z-index: 10;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 18px 80px 18px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s, transform 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+    }
+
+    #main-content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Card Wrapper & Arch Frame */
+    .invitation-hero-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .card-frame {
+      position: relative;
+      background: #ffffff;
+      border-radius: 240px 240px 24px 24px;
+      padding: 12px;
+      box-shadow: 0 25px 60px -15px rgba(100, 60, 45, 0.18),
+        0 0 0 1px rgba(220, 190, 160, 0.4);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      overflow: hidden;
+      margin: 0 auto;
+      max-width: 520px;
+    }
+
+    .card-frame:hover {
+      box-shadow: 0 32px 70px -15px rgba(100, 60, 45, 0.26),
+        0 0 0 2px rgba(198, 157, 88, 0.6);
+    }
+
+    .card-inner-border {
+      border: 1px solid rgba(198, 157, 88, 0.4);
+      border-radius: 230px 230px 16px 16px;
+      padding: 4px;
+      position: relative;
+    }
+
+    /* Golden Arch Glow outline */
+    .arch-glow {
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 120px;
+      border-top: 2px solid rgba(220, 175, 100, 0.7);
+      border-radius: 50% 50% 0 0;
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+      pointer-events: none;
+    }
+
+    /* The actual invitation image */
+    .invitation-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 226px 226px 12px 12px;
+      cursor: default;
+      transition: transform 0.5s ease;
+    }
+
+    .invitation-img:hover {
+      transform: scale(1.008);
+    }
+
+    /* DATE & COUNTDOWN SECTION */
+    .date-highlight-section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 34px 24px;
+      margin: 35px 0;
+      text-align: center;
+      border: 1px solid rgba(220, 190, 165, 0.5);
+      box-shadow: 0 16px 40px -10px rgba(110, 70, 50, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .date-highlight-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gold-gradient);
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .main-date-title {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      color: var(--text-burgundy);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .main-date-sub {
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    /* Date Badges Grid */
+    .date-badges {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .date-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .date-label {
+      font-family: var(--font-display);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .date-big-number {
+      font-family: var(--font-serif);
+      font-size: 52px;
+      line-height: 1;
+      font-weight: 700;
+      color: var(--text-burgundy);
+      padding: 0 10px;
+    }
+
+    .date-divider {
+      width: 1.5px;
+      height: 45px;
+      background: linear-gradient(180deg, transparent, #c69d58, transparent);
+    }
+
+    .time-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #faf3ee;
+      padding: 10px 22px;
+      border-radius: 30px;
+      border: 1px solid rgba(198, 157, 88, 0.4);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-maroon);
+      margin-bottom: 28px;
+    }
+
+    .time-badge svg {
+      color: var(--primary-gold);
+    }
+
+    /* COUNTDOWN TIMER TILES */
+    .countdown-container {
+      margin-top: 10px;
+      padding-top: 24px;
+      border-top: 1px dashed rgba(220, 190, 165, 0.6);
+    }
+
+    .countdown-title {
+      font-family: var(--font-display);
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      max-width: 440px;
+      margin: 0 auto 24px auto;
+    }
+
+    .timer-card {
+      background: linear-gradient(145deg, #fffcfb, #fdf4ee);
+      border-radius: 14px;
+      padding: 14px 6px;
+      border: 1px solid rgba(220, 190, 165, 0.5);
+      box-shadow: 0 4px 12px rgba(150, 100, 80, 0.05);
+    }
+
+    .timer-num {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-burgundy);
+      line-height: 1.1;
+      display: block;
+    }
+
+    .timer-unit {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary-gold);
+      font-weight: 600;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* Calendar & Event CTA Buttons */
+    .cta-button-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-gradient);
+      color: #3b200b;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(198, 157, 88, 0.35);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(198, 157, 88, 0.5);
+      color: #261304;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--text-maroon);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 12px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      border: 1.5px solid rgba(198, 157, 88, 0.7);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      background: #faf2ec;
+      transform: translateY(-2px);
+    }
+
+    /* COUPLE PHOTO SECTION */
+    .couple-section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 36px 20px;
+      margin: 35px 0;
+      text-align: center;
+      border: 1px solid rgba(220, 190, 165, 0.5);
+      box-shadow: 0 16px 40px -10px rgba(110, 70, 50, 0.08);
+    }
+
+    .quran-quote {
+      font-family: var(--font-arabic);
+      font-size: 24px;
+      color: var(--primary-gold);
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+
+    .quote-translation {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--text-burgundy);
+      margin-bottom: 24px;
+    }
+
+    .quote-surah {
+      font-family: var(--font-sans);
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* Stacked Couple Photos */
+    .couple-photos-stacked {
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+      max-width: 440px;
+      margin: 0 auto 20px auto;
+    }
+
+    .couple-card {
+      position: relative;
+      border-radius: 200px 200px 20px 20px;
+      padding: 8px;
+      background: linear-gradient(135deg, #fff9f5 0%, #f6eae2 100%);
+      border: 1px solid rgba(198, 157, 88, 0.45);
+      box-shadow: 0 16px 36px rgba(100, 60, 45, 0.12);
+      transition: all 0.4s ease;
+      cursor: default;
+    }
+
+    .couple-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px rgba(100, 60, 45, 0.18);
+      border-color: rgba(198, 157, 88, 0.8);
+    }
+
+    .couple-photo-inner {
+      border-radius: 192px 192px 14px 14px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      background: #fdf5ef;
+    }
+
+    .couple-img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .couple-card:hover .couple-img {
+      transform: scale(1.03);
+    }
+
+    .couple-card-tag {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(198, 157, 88, 0.4);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-burgundy);
+      font-weight: 600;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .couple-caption {
+      font-family: var(--font-great-vibes);
+      font-size: 40px;
+      color: var(--text-burgundy);
+      margin-top: 12px;
+      line-height: 1.1;
+    }
+
+    .couple-subcaption {
+      font-family: var(--font-display);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    /* VENUE & CEREMONY DETAILS SECTION */
+    .details-section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 36px 24px;
+      margin: 35px 0;
+      border: 1px solid rgba(220, 190, 165, 0.5);
+      box-shadow: 0 16px 40px -10px rgba(110, 70, 50, 0.08);
+      text-align: center;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin: 28px 0;
+      text-align: left;
+    }
+
+    @media (min-width: 600px) {
+      .details-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .detail-card {
+      background: #fdf8f4;
+      border-radius: 16px;
+      padding: 22px 18px;
+      border: 1px solid rgba(220, 190, 165, 0.4);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .detail-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid rgba(198, 157, 88, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-gold);
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .detail-text h4 {
+      font-family: var(--font-display);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      margin-bottom: 6px;
+    }
+
+    .detail-text p {
+      font-size: 14px;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+
+    .detail-text .venue-name {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-burgundy);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* Timeline Program */
+    .timeline-wrap {
+      margin: 32px 0 20px 0;
+      text-align: left;
+    }
+
+    .timeline-title {
+      font-family: var(--font-display);
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .timeline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .timeline-list::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 6px;
+      width: 2px;
+      background: linear-gradient(180deg, #c69d58, #ebd8c8);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -20px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 3px solid var(--primary-gold);
+    }
+
+    .timeline-time {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--text-burgundy);
+      min-width: 75px;
+    }
+
+    .timeline-event {
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+
+    /* Toast alert */
+    #toast-msg {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #3a191f;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      z-index: 10000;
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+    }
+
+    #toast-msg.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .footer-names {
+      font-family: var(--font-great-vibes);
+      font-size: 32px;
+      color: var(--text-burgundy);
+      margin-bottom: 6px;
+    }
+
+    /* Reopen envelope floating button */
+    .reopen-envelope-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 15px;
+      padding: 8px 18px;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: #ffffff;
+      border: 1px solid rgba(198, 157, 88, 0.5);
+      border-radius: 20px;
+      color: var(--primary-gold);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .reopen-envelope-btn:hover {
+      background: #faf1eb;
+      transform: translateY(-2px);
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Ambient Light Effects -->
+  <div class="ambient-bg">
+    <div class="ambient-glow ambient-glow-1"></div>
+    <div class="ambient-glow ambient-glow-2"></div>
+  </div>
+
+  <!-- Falling Petals & Golden Sparkles -->
+  <canvas id="petals-canvas"></canvas>
+
+  <!-- ====================================================================
+       1. INTRO SCREEN: LUXURY ENVELOPE WITH WAX SEAL (S & H)
+       ==================================================================== -->
+  <section id="intro-screen" aria-label="Wedding Envelope Introduction">
+    <div class="intro-header">
+      <div class="intro-title">Nikah Invitation</div>
+      <div class="intro-subtitle">Sahal &amp; Hiba</div>
+    </div>
+
+    <!-- 3D Interactive Envelope -->
+    <div class="envelope-stage">
+      <div class="envelope-box" id="envelope">
+        <!-- Top folding flap with rich floral embossed motif -->
+        <div class="flap-top">
+          <svg class="embossed-flourish" viewBox="0 0 340 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#8d594b" stroke-width="1.2" opacity="0.45" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="170" cy="70" r="10" stroke-dasharray="2 3" />
+              <circle cx="170" cy="70" r="18" />
+              <path d="M162 68 C160 58, 178 58, 178 68 C178 78, 162 78, 162 68 Z" />
+              <path d="M152 70 C150 50, 190 50, 188 70 C185 92, 155 92, 152 70 Z" />
+              <path d="M170 88 C160 115, 130 135, 105 145" />
+              <path d="M170 88 C180 115, 210 135, 235 145" />
+              <path d="M140 108 C120 100, 110 80, 125 72 C135 85, 140 98, 140 108 Z" />
+              <path d="M200 108 C220 100, 230 80, 215 72 C205 85, 200 98, 200 108 Z" />
+              <circle cx="95" cy="55" r="7" />
+              <circle cx="245" cy="55" r="7" />
+              <path d="M95 40 C75 50, 85 75, 105 65" />
+              <path d="M245 40 C265 50, 255 75, 235 65" />
+              <path d="M50 30 C90 35, 130 50, 170 50 C210 50, 250 35, 290 30" />
+              <path d="M70 20 C110 28, 140 38, 170 38 C200 38, 230 28, 270 20" stroke-dasharray="3 3" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- Left & Right triangular folds -->
+        <div class="flap-left"></div>
+        <div class="flap-right"></div>
+
+        <!-- Bottom folded flap with embossed base crest -->
+        <div class="flap-bottom">
+          <svg class="embossed-flourish" viewBox="0 0 340 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#8d594b" stroke-width="1.2" opacity="0.4" stroke-linecap="round">
+              <path d="M170 230 C140 200, 80 205, 50 240" />
+              <path d="M170 230 C200 200, 260 205, 290 240" />
+              <circle cx="170" cy="210" r="12" />
+              <circle cx="170" cy="210" r="6" />
+              <path d="M120 220 C100 205, 80 225, 95 240" />
+              <path d="M220 220 C240 205, 260 225, 245 240" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- Inner peek of the invitation card inside -->
+        <div class="inner-card-peek">
+          <div class="bismillah-small">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+          <div class="names-preview">Sahal &amp; Hiba</div>
+          <div style="font-size: 11px; color: #a47a6d; margin-top: 6px; letter-spacing: 1px;">OCTOBER 17, 2026</div>
+        </div>
+
+        <!-- Pulse Ring around Wax Seal -->
+        <div class="seal-ring-pulse"></div>
+
+        <!-- The Interactive Wax Seal Button -->
+        <button class="wax-seal" id="open-btn" aria-label="Open Wedding Invitation">
+          <div class="wax-seal-inner">
+            <span class="seal-monogram">S&amp;H</span>
+            <span class="seal-subtext">Nikah</span>
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Tap to Open Prompt -->
+    <div class="seal-prompt">
+      <div class="seal-prompt-text">Tap to Open Invitation</div>
+      <div class="seal-prompt-hint">With Best Compliments</div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       2. MAIN INVITATION CONTENT
+       ==================================================================== -->
+  <main id="main-content">
+
+    <!-- Hero Card Image Frame -->
+    <section class="invitation-hero-section">
+      <div class="card-frame">
+        <div class="card-inner-border">
+          <div class="arch-glow"></div>
+          <!-- Wedding Card Image -->
+          <img src="invitation_card.jpg" alt="Muhammed Sahal & Hiba Mahamood Wedding Invitation Card"
+            class="invitation-img">
+        </div>
+      </div>
+
+      <button class="reopen-envelope-btn" id="reopen-envelope">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+          <polyline points="16 6 12 2 8 6"></polyline>
+          <line x1="12" y1="2" x2="12" y2="15"></line>
+        </svg>
+        Reopen Envelope
+      </button>
+    </section>
+
+    <!-- ====================================================================
+         3. DATE, TIME & COUNTDOWN SECTION
+         ==================================================================== -->
+    <section class="date-highlight-section">
+      <div class="section-eyebrow">Save The Date</div>
+      <h2 class="main-date-title">The Nikah Day</h2>
+      <p class="main-date-sub">Saturday, 17th October 2026</p>
+
+      <div class="date-badges">
+        <div class="date-col">
+          <span class="date-label">Saturday</span>
+          <span class="date-big-number">17</span>
+        </div>
+        <div class="date-divider"></div>
+        <div class="date-col">
+          <span class="date-label">October</span>
+          <span class="date-big-number">2026</span>
+        </div>
+      </div>
+
+      <div class="time-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 16 14"></polyline>
+        </svg>
+        Nikah Ceremony at 10:00 AM
+      </div>
+
+      <!-- Live Countdown Timer -->
+      <div class="countdown-container">
+        <div class="countdown-title">Countdown to Our Forever</div>
+        <div class="countdown-grid">
+          <div class="timer-card">
+            <span class="timer-num" id="days">00</span>
+            <span class="timer-unit">Days</span>
+          </div>
+          <div class="timer-card">
+            <span class="timer-num" id="hours">00</span>
+            <span class="timer-unit">Hours</span>
+          </div>
+          <div class="timer-card">
+            <span class="timer-num" id="minutes">00</span>
+            <span class="timer-unit">Mins</span>
+          </div>
+          <div class="timer-card">
+            <span class="timer-num" id="seconds">00</span>
+            <span class="timer-unit">Secs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Directions / Location CTA -->
+      <div class="cta-button-group">
+        <a href="https://www.google.com/maps/search/?api=1&query=Green+Oak+Convention+Centre+Thurayur+Payyoli+Kerala" target="_blank" rel="noopener" class="btn-gold">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          View Venue Location
+        </a>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. COUPLE PHOTO SECTION
+         ==================================================================== -->
+    <section class="couple-section">
+      <div class="quran-quote">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
+        وَجَعَلَ بَيْنَكم مَّوَدَّةً وَرَحْمَةً</div>
+
+      <div style="height: 24px;"></div>
+
+      <!-- Stacked Couple Photos -->
+      <div class="couple-photos-stacked">
+
+        <!-- Photo Card 1 -->
+        <div class="couple-card">
+          <div class="couple-photo-inner">
+            <img src="1.jpeg" alt="Muhammed Sahal" class="couple-img">
+          </div>
+        </div>
+
+        <!-- Photo Card 2 -->
+        <div class="couple-card">
+          <div class="couple-photo-inner">
+            <img src="2.jpeg" alt="Hiba Mahamood" class="couple-img">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="couple-caption">Sahal &amp; Hiba</div>
+      <div class="couple-subcaption">Together Forever</div>
+    </section>
+
+    <!-- ====================================================================
+         5. VENUE & PROGRAM DETAILS SECTION
+         ==================================================================== -->
+    <section class="details-section">
+      <div class="section-eyebrow">Celebration Details</div>
+      <h3 style="font-family: var(--font-serif); font-size: 22px; color: var(--text-burgundy); margin-bottom: 24px;">
+        When &amp; Where</h3>
+
+      <div class="details-grid">
+        <!-- Venue Card -->
+        <div class="detail-card">
+          <div class="detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="detail-text">
+            <h4>Venue</h4>
+            <span class="venue-name">Green.Oak Convention Centre</span>
+            <p>Thurayur, Payyoli, Kerala</p>
+          </div>
+        </div>
+
+        <!-- Time & Date Card -->
+        <div class="detail-card">
+          <div class="detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <div class="detail-text">
+            <h4>Date &amp; Time</h4>
+            <span class="venue-name">Saturday, 17 Oct 2026</span>
+            <p>Nikah at 10:00 AM onwards</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Program Timeline -->
+      <div class="timeline-wrap">
+        <div class="timeline-title">Program Schedule</div>
+        <div class="timeline-list">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-time">10:00 AM</div>
+            <div class="timeline-event">Guest Arrival &amp; Seating</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-time">10:30 AM</div>
+            <div class="timeline-event">Nikah Solemnization Ceremony</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-names">Sahal &amp; Hiba</div>
+      <p>We eagerly await your gracious presence and blessings!</p>
+    </footer>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="toast-msg">Link copied to clipboard!</div>
+
+  <!-- ====================================================================
+       JAVASCRIPT INTERACTIONS
+       ==================================================================== -->
+  <script>
+    // 1. OPEN ENVELOPE INTERACTION
+    const introScreen = document.getElementById('intro-screen');
+    const envelope = document.getElementById('envelope');
+    const openBtn = document.getElementById('open-btn');
+    const mainContent = document.getElementById('main-content');
+    const reopenBtn = document.getElementById('reopen-envelope');
+
+    function openInvitation() {
+      if (envelope.classList.contains('is-opening')) return;
+
+      envelope.classList.add('is-opening');
+
+      // Fade out intro screen and reveal main content
+      setTimeout(() => {
+        introScreen.classList.add('opened');
+        mainContent.classList.add('visible');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 700);
+    }
+
+    openBtn.addEventListener('click', openInvitation);
+    introScreen.addEventListener('click', (e) => {
+      if (!envelope.contains(e.target)) {
+        openInvitation();
+      }
+    });
+
+    // Reopen envelope button
+    reopenBtn.addEventListener('click', () => {
+      introScreen.classList.remove('opened');
+      envelope.classList.remove('is-opening');
+      mainContent.classList.remove('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 2. COUNTDOWN TIMER LOGIC (Target: 17th October 2026, 10:00 AM)
+    const weddingDate = new Date('October 17, 2026 10:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        document.getElementById('days').innerText = '00';
+        document.getElementById('hours').innerText = '00';
+        document.getElementById('minutes').innerText = '00';
+        document.getElementById('seconds').innerText = '00';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = String(days).padStart(2, '0');
+      document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+      document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 3. ADD TO CALENDAR GENERATOR (ICS FILE DOWNLOAD - IF PRESENT)
+    const calBtn = document.getElementById('add-to-calendar');
+    if (calBtn) {
+      calBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const title = "The Nikah of Muhammed Sahal & Hiba Mahamood";
+        const description = "Join us in celebrating our Nikah ceremony at Green.Oak Convention Centre, Thurayur, Payyoli.";
+        const location = "Green.Oak Convention Centre, Thurayur, Payyoli, Kerala";
+        const startTime = "20261017T100000";
+        const endTime = "20261017T140000";
+
+        const icsContent = `BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:${title}\nDESCRIPTION:${description}\nLOCATION:${location}\nDTSTART:${startTime}\nDTEND:${endTime}\nEND:VEVENT\nEND:VCALENDAR`;
+
+        const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.setAttribute('download', 'Sahal_Hiba_Nikah.ics');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        showToast("Calendar event downloaded!");
+      });
+    }
+
+    // 4. FALLING PETALS & GOLDEN SPARKLES CANVAS ANIMATION
+    const canvas = document.getElementById('petals-canvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const particles = [];
+    const particleCount = 35;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 6 + 4,
+        speedY: Math.random() * 0.8 + 0.3,
+        speedX: Math.sin(i) * 0.5,
+        rotation: Math.random() * 360,
+        rotationSpeed: Math.random() * 2 - 1,
+        opacity: Math.random() * 0.6 + 0.2,
+        color: Math.random() > 0.5 ? '#d4af37' : '#e8c7b8'
+      });
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach(p => {
+        p.y += p.speedY;
+        p.x += p.speedX + Math.sin(p.y * 0.01) * 0.3;
+        p.rotation += p.rotationSpeed;
+
+        if (p.y > canvas.height + 10) {
+          p.y = -10;
+          p.x = Math.random() * canvas.width;
+        }
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate((p.rotation * Math.PI) / 180);
+        ctx.globalAlpha = p.opacity;
+        ctx.fillStyle = p.color;
+
+        ctx.beginPath();
+        ctx.ellipse(0, 0, p.size, p.size * 0.5, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+      });
+
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // Toast helper
+    function showToast(message) {
+      const toast = document.getElementById('toast-msg');
+      toast.innerText = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+
+</html>
